@@ -52,7 +52,7 @@ added later only for an outside system that can't use a NATS client.
 - **Each spoke has its own JetStream domain**, so its streams keep accepting messages while the hub is unreachable.
   The hub *sources* what it needs from spoke streams when the link is up, and spokes *mirror* the hub's KV buckets
   (policy, roster) so the last known value is always local. This is what replaces the planned `hub_outbox` and its
-  replay. It is the most intricate part of the design; M.RLY-T9 prototypes it before anything depends on it.
+  replay. It is the most intricate part of the design; M.RLY-T10 prototypes it before anything depends on it.
 - **The hub machine is also a spoke** for its own apps (today's main PC). It can move to a dedicated box later
   (hub-and-spoke Phase 6).
 
@@ -160,11 +160,14 @@ The peer-to-peer gateway keeps working beside all of this, as the epic already r
 
 ## 11. Order of work
 
-1. Foundation: run the server (T2), contracts (T3), client (T4), security (T5), outbox (T6).
-2. First real users: AppBus between Orchestrator.Desktop and Tickets.Desktop (T7), then KdpPublish's
-   `prose.book.published` (T8).
-3. Across machines: leaf nodes and JetStream domains (T9), device enrollment (T10), monitoring (T11).
-4. Then the hub-and-spoke phases, rewritten on top of the above.
+The epic is M.RLY-T2; approving it starts the work.
+
+1. Foundation: run the server (M.RLY-T3), contracts (T4), client (T5), security (T6), outbox (T7).
+2. First real users: AppBus between Orchestrator.Desktop and Tickets.Desktop (T8), then KdpPublish's
+   `prose.book.published` (T9).
+3. Across machines: leaf nodes and JetStream domains (T10), device credentials and auth callout (T11),
+   monitoring (T12).
+4. Then the hub-and-spoke phases, rewritten on top of the above (T13 to T30).
 
 ## 12. Non-goals
 
