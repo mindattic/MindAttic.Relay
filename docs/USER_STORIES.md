@@ -22,7 +22,7 @@ _Nothing recorded yet._
 | ID | Date | Type | Status | Summary | Ref |
 |---|---|---|---|---|---|
 | M.RLY-T1 | 2026-10-27 | docs | closed | Scaffold the MindAttic.Relay repo (agent standard files, ticket code M.RLY) and write docs/design/relay.md: the architecture every MindAttic app and machine uses to message each other (NATS + JetStream, subjects, envelope headers, security, delivery rules, outbox, versioning) and how the hub-and-spoke plan maps onto it | ba9744e |
-| M.RLY-T2 | 2026-10-27 | feature | open | EPIC: MindAttic.Relay, one message exchange for every MindAttic app and machine (NATS + JetStream), and hub and spoke built on it: members' machines joined into one Orchestrator, everyone's CLIs visible and shareable, single-machine mode unchanged | — |
+| M.RLY-T2 | 2026-10-27 | feature | open | RELAY | — |
 | M.RLY-T3 | 2026-10-27 | feature | open | Relay server: install a pinned NATS server with JetStream as a Windows service on each machine (loopback-only, TLS, local CA, credentials required), with `relay install\|status\|uninstall` | — |
 | M.RLY-T4 | 2026-10-27 | feature | open | MindAttic.Relay.Contracts: Protocol Buffers message definitions with generated C# types, the envelope header names (Nats-Msg-Id, Relay-Type, Relay-Version, Relay-Source, Relay-Correlation, Relay-Sent) and the subject naming rules, as a NuGet package | — |
 | M.RLY-T5 | 2026-10-27 | feature | open | MindAttic.Relay.Client: the one client every app uses (PublishAsync, SubscribeAsync with durable consumers and ack-after-handler, RequestAsync, ServeAsync, key-value access), DI via AddMindAtticRelay(), tested against a real embedded nats-server | — |
@@ -52,3 +52,4 @@ _Nothing recorded yet._
 | M.RLY-T29 | 2026-10-27 | feature | open | Hub 5.17: opt-in remote dispatch (a spoke serves `orch.cmd.dispatch.<device>` only when its owner set AcceptDispatch) plus cross-machine rebalance and API-key failover to key-holder spokes only | — |
 | M.RLY-T30 | 2026-10-27 | feature | open | Hub 6.18: operations: deploy the hub service and the hub Relay server, JetStream and hub DB backups, operator and certificate key rotation, device revocation UI, rate limits on sign-in and enrollment, optional cloud relay for members off the tailnet, version-skew and chaos tests | — |
 | M.RLY-T31 | 2026-10-27 | docs | closed | docs/design/relay.md cites the foundation tickets one number low (written before the epic took M.RLY-T2): server is T3, contracts T4, client T5, security T6, outbox T7, AppBus T8, KdpPublish T9, leaf nodes T10, device credentials T11, monitoring T12 | 3891ecd |
+| M.RLY-T32 | 2026-10-31 | docs | closed | Update USER_STORIES.md | — |
