@@ -53,3 +53,7 @@ _Nothing recorded yet._
 | M.RLY-T30 | 2026-10-27 | feature | open | Hub 6.18: operations: deploy the hub service and the hub Relay server, JetStream and hub DB backups, operator and certificate key rotation, device revocation UI, rate limits on sign-in and enrollment, optional cloud relay for members off the tailnet, version-skew and chaos tests | — |
 | M.RLY-T31 | 2026-10-27 | docs | closed | docs/design/relay.md cites the foundation tickets one number low (written before the epic took M.RLY-T2): server is T3, contracts T4, client T5, security T6, outbox T7, AppBus T8, KdpPublish T9, leaf nodes T10, device credentials T11, monitoring T12 | 3891ecd |
 | M.RLY-T32 | 2026-10-31 | docs | closed | Update USER_STORIES.md | — |
+| M.RLY-T33 | 2026-11-02 | docs | open | Adopt MindAttic.Agency docs-site pipeline, publish README to GitHub Pages (HOUSE-LAW-14) | — |
+| M.RLY-T34 | 2026-11-02 | fix | closed | Bughunt sweep, two passes: find and fix real bugs across tracked source (user request 2026-11-02) | — |
+| M.RLY-T35 | 2026-11-02 | fix | closed | Command pointer in .agent/commands said a literal $source instead of its legacy path (install.ps1 escaping bug fixed in MAT-T84); point it at the real source, or the global command when the project copy is gone | — |
+| M.RLY-T36 | 2026-11-10 | chore | closed | Crash recovery: commit the command-catalog sync (.agent/commands/*.md) and regenerated docs/USER_STORIES.md left uncommitted by the session crash | — |
